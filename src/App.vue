@@ -17,8 +17,16 @@
         <td>{{ item.id }}</td>
         <td>{{ item.name }}</td>
         <td>{{ item.price }}</td>
-        <td>{{ item.count }}</td>
+        <td>
+          <button @click="item.count--" :disabled="item.count <= 1">-</button>
+          {{ item.count }}
+          <button @click="item.count++">+</button>
+        </td>
         <td><button>刪除</button></td>
+      </tr>
+      <tr>
+        <td colspan="3">總價</td>
+        <td colspan="3">{{totalPrice}}</td>
       </tr>
     </table>
   </div>
@@ -38,6 +46,13 @@ export default {
       ],
     };
   },
+  computed: {
+    totalPrice:{
+      get(){
+        return this.cartlist.reduce((a, b) => a + b.price*b.count, 0);
+      }
+    }
+  },
 };
 </script>
 
@@ -55,8 +70,12 @@ table {
   border: 1px solid #888888;
   border-collapse: collapse;
 }
-th, td {
+th,
+td {
   border: 1px solid #888888;
   padding: 10px;
+}
+th {
+  background: #ccc;
 }
 </style>
