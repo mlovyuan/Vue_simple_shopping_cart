@@ -1,24 +1,10 @@
-# simple_shopping_cart
+# Simple Shopping Cart
 
-## Project setup
-```
-npm install
-```
+### 練習點
+---
+- `v-for`、`v-if` 的使用。
+- `v-bind` 於<button>內屬性的使用。
+- 運用 `@click`事件的事件修飾符 `.prevent` 來使<a>標籤原先的 `href` 事件不會觸發。
+- `computed` 與 `methods` 的使用。
+- 熟悉js的 `reduce()`。
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
